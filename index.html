@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Mochammad Atha Tajuddin</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .gradient-blob {
+      position: absolute;
+      width: 32rem;
+      height: 32rem;
+      background: radial-gradient(circle at center, rgba(59, 130, 246, 0.55), rgba(15, 23, 42, 0));
+      filter: blur(40px);
+      opacity: 0.6;
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    [data-animate].animate-in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-slate-100 font-poppins antialiased">
+  <div class="relative overflow-hidden min-h-screen">
+    <div class="gradient-blob -top-32 -left-20 hidden lg:block"></div>
+    <div class="gradient-blob bottom-0 right-[-8rem] hidden lg:block"></div>
+
+    <header class="relative z-10">
+      <nav class="flex items-center justify-between px-6 lg:px-20 py-6">
+        <a href="#home" class="text-xl font-semibold tracking-tight">
+          <span class="text-blue-400">\.Atha</span> Portfolio
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+          <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+          <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+          <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+        </div>
+        <a href="#contact" class="hidden md:inline-flex items-center gap-2 rounded-full bg-blue-500/90 px-5 py-2 text-sm font-semibold transition hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
+          Let's Connect
+        </a>
+        <button type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white/80 hover:text-white hover:border-white transition" aria-label="Open navigation menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="relative z-10" id="home">
+      <section class="px-6 lg:px-20 py-12 lg:py-24">
+        <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center max-w-6xl mx-auto">
+          <div class="space-y-6" data-animate>
+            <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-blue-200/80">
+              Mahasiswa IT ITS | Fokus Keamanan Siber
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Mengeksplorasi keamanan siber dan rekayasa perangkat lunak modern.
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg text-slate-300 max-w-xl">
+              Saya <span class="font-semibold text-white">Mochammad Atha Tajuddin</span>, mahasiswa Teknologi Informasi ITS dengan ketertarikan pada Cysec Engineering, Malware Development, Reverse Engineering, Web Development, AI/Machine Learning, Big Data, dan Low-level Programming.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+              <a href="#projects" class="inline-flex items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-sm md:text-base font-semibold text-white shadow-lg shadow-blue-500/40 transition hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+                Jelajahi Proyek Pribadi
+              </a>
+              <a href="https://github.com/AtokTajuddin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm md:text-base font-semibold text-white/80 transition hover:border-blue-400 hover:text-blue-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+                Explore GitHub
+              </a>
+            </div>
+            <dl class="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-6 text-left">
+              <div class="space-y-1" data-animate>
+                <dt class="text-xs uppercase tracking-wide text-slate-400">Security labs diselesaikan</dt>
+                <dd class="text-2xl font-semibold text-white">15+</dd>
+              </div>
+              <div class="space-y-1" data-animate>
+                <dt class="text-xs uppercase tracking-wide text-slate-400">Penelitian &amp; proyek riset</dt>
+                <dd class="text-2xl font-semibold text-white">8</dd>
+              </div>
+              <div class="space-y-1" data-animate>
+                <dt class="text-xs uppercase tracking-wide text-slate-400">Tulisan &amp; catatan teknis</dt>
+                <dd class="text-2xl font-semibold text-white">30+</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="relative" data-animate>
+            <div class="absolute inset-0 rounded-3xl bg-blue-500/20 blur-3xl"></div>
+            <div class="relative rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-2xl">
+              <img src="public/webdev.jpg" alt="Developer at work" class="w-full rounded-2xl object-cover aspect-[4/5]" loading="lazy" />
+              <div class="mt-6 space-y-3 text-sm text-slate-200">
+                <p class="flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 rounded-full bg-green-400"></span>
+                  Empowering businesses with scalable front-end architectures.
+                </p>
+                <p class="flex items-center gap-2">
+                  <span class="inline-flex h-2 w-2 rounded-full bg-blue-400"></span>
+                  Passionate about design systems, accessibility, and motion.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="px-6 lg:px-20 py-16 lg:py-24">
+        <div class="max-w-5xl mx-auto grid gap-10 lg:grid-cols-[1fr_1.2fr] items-start">
+          <div class="space-y-4" data-animate>
+            <h2 class="text-2xl md:text-3xl font-semibold">About</h2>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Saat ini saya menempuh studi di Departemen Teknologi Informasi Institut Teknologi Sepuluh Nopember. Rasa penasaran saya mendorong eksplorasi mendalam di ranah keamanan siber, rekayasa malware, dan reverse engineering.
+            </p>
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              Di sisi lain, saya terus mengasah kemampuan pada pengembangan web modern, AI/Machine Learning, Big Data, dan pemrograman low-level untuk membangun solusi yang tangguh dan efisien.
+            </p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2" data-animate>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <h3 class="text-lg font-semibold text-white">Fokus Utama</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• Cybersecurity engineering &amp; malware analysis</li>
+                <li>• Reverse engineering &amp; low-level programming</li>
+                <li>• AI/ML experimentation &amp; Big Data processing</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <h3 class="text-lg font-semibold text-white">Pendekatan</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• Eksperimen terukur berbasis riset keamanan</li>
+                <li>• Dokumentasi teknis dan pengetahuan terbuka</li>
+                <li>• Kolaborasi lintas disiplin dengan komunitas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="px-6 lg:px-20 py-16 lg:py-24 bg-white/5 backdrop-blur-sm border-y border-white/10">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-animate>
+            <h2 class="text-2xl md:text-3xl font-semibold">Toolkit</h2>
+            <p class="text-sm md:text-base text-slate-300 max-w-2xl">
+              A balanced mix of modern frameworks, testing utilities, and workflow tools that keeps teams shippable and confident.
+            </p>
+          </div>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-animate>
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
+              <h3 class="text-lg font-semibold">Core Stack</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• React, Next.js</li>
+                <li>• TypeScript</li>
+                <li>• Tailwind CSS</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
+              <h3 class="text-lg font-semibold">Design &amp; Motion</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• Figma</li>
+                <li>• Framer Motion</li>
+                <li>• Lottie</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
+              <h3 class="text-lg font-semibold">Quality</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• Playwright</li>
+                <li>• Jest &amp; React Testing Library</li>
+                <li>• Lighthouse CI</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-950/40 p-6">
+              <h3 class="text-lg font-semibold">Collaboration</h3>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li>• Linear &amp; Jira</li>
+                <li>• Notion &amp; Confluence</li>
+                <li>• GitHub Actions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="px-6 lg:px-20 py-16 lg:py-24">
+        <div class="max-w-6xl mx-auto space-y-10">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-animate>
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold">Eksplorasi Terbaru</h2>
+              <p class="text-sm md:text-base text-slate-300 mt-3 max-w-2xl">
+                Kumpulan eksperimen pribadi dan studi kasus yang saya bangun untuk menggabungkan keamanan, pemrograman, dan visualisasi data modern.
+              </p>
+            </div>
+            <a href="https://github.com/AtokTajuddin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white/80 transition hover:border-blue-400 hover:text-blue-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+              Lihat repositori GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L21 10.5m0 0l-3.75 3.75M21 10.5H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-2" data-animate>
+            <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-widest text-blue-300/80">Security Tooling</span>
+                  <span class="text-xs text-slate-400">2025</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition">BOAR — Buffer Overflow Analyzer &amp; Reporter</h3>
+                <p class="text-sm text-slate-300">
+                  Framework statis-dinamis yang memindai binary untuk pola buffer overflow, mengolah hasil debugging otomatis, dan menghasilkan laporan teknis siap dibagikan ke tim riset.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2 text-xs text-blue-200/80">
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">Rust</span>
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">Ghidra API</span>
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">Binary Analysis</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-widest text-blue-300/80">Reconnaissance Framework</span>
+                  <span class="text-xs text-slate-400">2024</span>
+                </div>
+                <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition">ReconSuite — Web-based Recon Automation</h3>
+                <p class="text-sm text-slate-300">
+                  Aplikasi web yang mengorkestrasi tool reconnaissance open-source, menjadwalkan scanning, serta menyatukan hasil ke dalam dashboard dan laporan PDF otomatis.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-2 text-xs text-blue-200/80">
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">Next.js</span>
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">Python API</span>
+                  <span class="rounded-full border border-blue-300/30 px-3 py-1">OWASP Recon Tools</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="px-6 lg:px-20 py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto rounded-3xl border border-white/10 bg-white/5 p-10 md:p-16 backdrop-blur-md" data-animate>
+          <div class="flex flex-col gap-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-semibold text-white">Ikuti perjalanan eksplorasi saya.</h2>
+            <p class="text-sm md:text-base text-slate-300">
+              Dokumentasi eksperimen, catatan penelitian, dan proyek sampingan saya rangkum secara berkala. Kunjungi repositori untuk melihat progres terbaru dan rencana studi selanjutnya.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 items-center justify-center">
+              <a href="https://github.com/AtokTajuddin" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 rounded-full bg-blue-500 px-7 py-3 text-sm md:text-base font-semibold text-white shadow-lg shadow-blue-500/40 transition hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+                Github.com/AtokTajuddin
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 px-6 lg:px-20 py-8 text-sm text-slate-400 border-t border-white/10 bg-slate-950/40 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p>&copy; <span id="year"></span> Mochammad Atha Tajuddin. Crafted with care.</p>
+        <span class="text-xs uppercase tracking-[0.3em] text-slate-500">Ship confident, iterate fast.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const typedRoleEl = document.createElement('span');
+      typedRoleEl.id = 'typed-role';
+      typedRoleEl.className = 'font-semibold text-blue-300';
+
+      const heroHeading = document.querySelector('h1');
+      if (heroHeading) {
+        const roleContainer = document.createElement('span');
+        roleContainer.className = 'block text-base sm:text-lg md:text-xl text-blue-200 mt-3';
+        roleContainer.appendChild(document.createTextNode('I specialise as a '));
+        roleContainer.appendChild(typedRoleEl);
+        heroHeading.insertAdjacentElement('afterend', roleContainer);
+
+        if (!prefersReducedMotion && window.Typed) {
+          new Typed('#typed-role', {
+            strings: [
+              'Cybersecurity Engineering',
+              'Novice Malware Development',
+              'Beginner Reverse Engineer',
+              'Web Developer',
+              'Novice AI/ML Explorer',
+              'Beginner Big Data Analyst',
+              'Beginner Low-level Programmer'
+            ],
+            typeSpeed: 60,
+            backSpeed: 36,
+            smartBackspace: true,
+            loop: true,
+            backDelay: 2000,
+          });
+        } else {
+          typedRoleEl.textContent = 'Cybersecurity Enthusiast';
+        }
+      }
+
+      const animatedElements = document.querySelectorAll('[data-animate]');
+
+      if (prefersReducedMotion) {
+        animatedElements.forEach((el) => el.classList.add('animate-in-view'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+        }
+      );
+
+      animatedElements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
