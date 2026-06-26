@@ -77,11 +77,23 @@
       background: var(--phos); z-index: 70; box-shadow: 0 0 12px var(--phos-dim);
     }
 
+    /* ---------- scroll split: a phosphor blade slashes across, then the page parts diagonally ---------- */
+    .split { position: absolute; inset: 0; z-index: 30; pointer-events: none; overflow: hidden; }
+    .split-half { position: absolute; inset: 0; background: var(--bg); will-change: transform; }
+    .split-top    { clip-path: polygon(0 0, 100% 0, 100% 42%, 0 58%); }
+    .split-bottom { clip-path: polygon(0 58%, 100% 42%, 100% 100%, 0 100%); }
+    .split-seam { position: absolute; inset: 0; width: 100%; height: 100%; transform-origin: left center; will-change: transform, opacity; }
+    .split-seam line { stroke: var(--phos); stroke-width: 2; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 6px var(--phos)); }
+
     /* ---------- custom cursor (desktop) ---------- */
-    .cur { position: fixed; top:0; left:0; z-index: 90; pointer-events: none; transform: translate(-50%,-50%); mix-blend-mode: difference; }
+    .cur { position: fixed; top:0; left:0; z-index: 110; pointer-events: none; transform: translate(-50%,-50%); mix-blend-mode: difference; }
     .cur-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; }
-    .cur-ring { position: fixed; top:0; left:0; z-index: 90; pointer-events: none; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; transform: translate(-50%,-50%); transition: width .25s ease, height .25s ease, border-color .25s ease; mix-blend-mode: difference; }
+    .cur-ring { position: fixed; top:0; left:0; z-index: 110; pointer-events: none; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.5); border-radius: 50%; transform: translate(-50%,-50%); transition: width .25s ease, height .25s ease, border-color .25s ease; mix-blend-mode: difference; }
     .cur-ring.big { width: 64px; height: 64px; border-color: var(--phos); }
+    /* on fine-pointer devices the custom cursor IS the cursor — hide the native one */
+    @media (hover: hover) and (pointer: fine) {
+      html, body, a, button, [data-mag], [role="button"] { cursor: none; }
+    }
     @media (hover: none), (max-width: 768px) { .cur, .cur-ring { display: none; } }
 
     /* ---------- shared bits ---------- */
@@ -143,6 +155,7 @@
       .js [data-rise], .js [data-fade] { opacity: 1 !important; transform: none !important; }
       .caret, .live-dot { animation: none; }
       #gl { opacity: 1; }
+      .split { display: none; }
     }
   </style>
 </head>
@@ -244,6 +257,7 @@
 
     <!-- ============ FOCUS / CAPABILITIES ============ -->
     <section id="focus" class="relative z-10 px-6 py-28 lg:px-12 lg:py-40">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto max-w-[1400px]">
         <div class="mb-20 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" data-rise>
           <h2 class="display text-[var(--ink)]" style="font-size:clamp(2rem,5vw,3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1;">What I do</h2>
@@ -310,6 +324,7 @@
 
     <!-- ============ ABOUT ============ -->
     <section id="about" class="relative z-10 border-t border-[var(--line)] bg-[var(--bg-2)]/40 px-6 py-28 lg:px-12 lg:py-40">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto grid max-w-[1400px] gap-16 lg:grid-cols-[1fr_1.2fr]">
         <div data-rise>
           <p class="eyebrow mb-6">About</p>
@@ -339,6 +354,7 @@
 
     <!-- ============ WORK ============ -->
     <section id="work" class="relative z-10 px-6 py-28 lg:px-12 lg:py-40">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto max-w-[1400px]">
         <div class="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" data-rise>
           <h2 class="display text-[var(--ink)]" style="font-size:clamp(2rem,5vw,3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1;">Selected work</h2>
@@ -437,6 +453,7 @@
 
     <!-- ============ STACK ============ -->
     <section id="stack" class="relative z-10 border-t border-[var(--line)] bg-[var(--bg-2)]/40 px-6 py-28 lg:px-12 lg:py-40">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto max-w-[1400px]">
         <div class="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between" data-rise>
           <h2 class="display text-[var(--ink)]" style="font-size:clamp(2rem,5vw,3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1;">Everyday toolkit</h2>
@@ -471,6 +488,7 @@
 
     <!-- ============ RESUME ============ -->
     <section id="resume" class="relative z-10 px-6 py-28 lg:px-12 lg:py-40">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto max-w-[1400px]">
         <div class="mb-16" data-rise>
           <h2 class="display text-[var(--ink)]" style="font-size:clamp(2rem,5vw,3.6rem);font-weight:300;letter-spacing:-0.02em;line-height:1;">Experience</h2>
@@ -583,6 +601,7 @@
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="relative z-10 border-t border-[var(--line)] px-6 py-28 lg:px-12 lg:py-44">
+      <div class="split" data-split aria-hidden="true"><div class="split-half split-bottom"></div><div class="split-half split-top"></div><svg class="split-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="58" x2="100" y2="42"/></svg></div>
       <div class="mx-auto max-w-[1400px]">
         <p class="eyebrow mb-8" data-rise>Contact</p>
         <h2 class="display text-[var(--ink)]" style="font-size:clamp(2.4rem,8vw,7rem);font-weight:300;line-height:0.95;letter-spacing:-0.02em;" data-rise>
@@ -688,7 +707,7 @@
         float h(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123); }
         float nz(vec2 p){ vec2 i=floor(p),f=fract(p); f=f*f*(3.0-2.0*f);
           return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y); }
-        float fbm(vec2 p){ float v=0.0,a=0.5; for(int i=0;i<6;i++){ v+=a*nz(p); p*=2.03; a*=0.5; } return v; }
+        float fbm(vec2 p){ float v=0.0,a=0.5; for(int i=0;i<4;i++){ v+=a*nz(p); p*=2.03; a*=0.5; } return v; }
         void main(){
           vec2 uv=(gl_FragCoord.xy-0.5*r)/r.y;
           vec2 q=uv*1.35;
@@ -714,23 +733,21 @@
       const uR=gl.getUniformLocation(prog,'r'), uT=gl.getUniformLocation(prog,'t'), uM=gl.getUniformLocation(prog,'m');
       let mx=0,my=0,tmx=0,tmy=0;
       addEventListener('pointermove', e => { tmx=(e.clientX/innerWidth-0.5); tmy=-(e.clientY/innerHeight-0.5); });
-      function resize(){ const dpr=Math.min(devicePixelRatio||1,1.5); cv.width=innerWidth*dpr; cv.height=innerHeight*dpr; gl.viewport(0,0,cv.width,cv.height); }
+      function resize(){ const dpr=Math.min(devicePixelRatio||1,1); cv.width=innerWidth*dpr; cv.height=innerHeight*dpr; gl.viewport(0,0,cv.width,cv.height); }
       resize(); addEventListener('resize', resize);
       requestAnimationFrame(()=> cv.style.opacity = 1);
-      let visible=true;
-      addEventListener('scroll', ()=>{ visible = scrollY < innerHeight*1.1; }, {passive:true});
       const start=performance.now();
       function frame(now){
-        if (visible || RM){
-          mx+=(tmx-mx)*0.04; my+=(tmy-my)*0.04;
-          gl.uniform2f(uR, cv.width, cv.height);
-          gl.uniform1f(uT, RM ? 6.0 : (now-start)/1000);
-          gl.uniform2f(uM, mx, my);
-          gl.drawArrays(gl.TRIANGLES, 0, 3);
-        }
+        if (document.hidden) return;          // paused while tab is hidden; resumes on visibilitychange
+        mx+=(tmx-mx)*0.04; my+=(tmy-my)*0.04;
+        gl.uniform2f(uR, cv.width, cv.height);
+        gl.uniform1f(uT, RM ? 6.0 : (now-start)/1000);
+        gl.uniform2f(uM, mx, my);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
         if (!RM) requestAnimationFrame(frame);
       }
       requestAnimationFrame(frame);
+      if (!RM) document.addEventListener('visibilitychange', ()=>{ if (!document.hidden) requestAnimationFrame(frame); });
     })();
 
     /* ---------- GSAP: marquee, scroll progress, reveals, parallax ---------- */
@@ -752,6 +769,21 @@
           .from('section:first-of-type [data-rise]', { y:30, opacity:0, duration:1, stagger:0.1 }, 0.5)
           .from('[data-fade]', { opacity:0, duration:1 }, 0.9);
 
+        // scroll-scrubbed slice: a phosphor blade slashes across, then the dark page parts along
+        // the diagonal to reveal the section — and reverses (re-closes) on scroll up
+        gsap.utils.toArray('[data-split]').forEach(s => {
+          const top  = s.querySelector('.split-top'),
+                bot  = s.querySelector('.split-bottom'),
+                seam = s.querySelector('.split-seam');
+          gsap.set(seam, { scaleX:0, transformOrigin:'left center' });
+          // linear tweens + direct scrub so the motion tracks the scroll 1:1 (no laggy trailing)
+          gsap.timeline({ scrollTrigger:{ trigger:s, start:'top bottom', end:'top 40%', scrub:true } })
+            .to(seam, { scaleX:1, duration:0.4, ease:'none' }, 0)        // blade slashes across
+            .to(top,  { yPercent:-100, duration:0.6, ease:'none' }, 0.38)  // top half lifts away
+            .to(bot,  { yPercent:100,  duration:0.6, ease:'none' }, 0.38)  // bottom half drops away
+            .to(seam, { opacity:0, duration:0.4, ease:'none' }, 0.55);     // blade fades as the gap opens
+        });
+
         // generic reveals
         gsap.utils.toArray('[data-rise]').forEach(el => {
           if (el.closest('section:first-of-type')) return; // hero handled above
@@ -769,7 +801,8 @@
         gsap.set('[data-rise],[data-fade]', { opacity:1, y:0 });
       }
     } else {
-      // GSAP failed to load — show everything
+      // GSAP failed to load — drop the split covers and show everything
+      document.querySelectorAll('.split').forEach(el => el.style.display = 'none');
       document.querySelectorAll('[data-rise],[data-fade],[data-hero-line]').forEach(el => { el.style.opacity=1; el.style.transform='none'; });
     }
   </script>
